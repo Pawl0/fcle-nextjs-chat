@@ -1,8 +1,18 @@
 # Use a imagem oficial do Node.js como base
 FROM node:19-slim
 
+RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
+
 WORKDIR /home/node/app
 
 USER node
 
-CMD ["tail", "-f", "/dev/null"]
+COPY --chown=node:node . .  
+
+RUN npm install
+
+RUN npx prisma migrate dev
+
+EXPOSE 3000
+
+CMD ["npm", "run", "dev"]

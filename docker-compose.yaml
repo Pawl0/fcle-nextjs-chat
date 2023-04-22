@@ -10,6 +10,6 @@ services:
     depends_on:
       - db
   db:
-    image: sqlite:debian
+    image: jitesoft/sqlite
     volumes:
      - ./dev.db:/var/lib/sqlite/db/dev.db

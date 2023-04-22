@@ -5,11 +5,9 @@ services:
     build: .
     ports:
       - 3000:3000
-    volumes:
-      - .:/home/node/app
     depends_on:
       - db
   db:
     image: jitesoft/sqlite
     volumes:
-     - ./dev.db:/var/lib/sqlite/db/dev.db
+     - ./prisma/dev.db:/var/lib/sqlite/db/dev.db

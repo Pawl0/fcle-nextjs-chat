@@ -14,9 +14,9 @@ yarn dev
 pnpm dev
 ```
 
-# Run with Docker
+## Run with Docker
 
-Rum the following command:
+Run the following command:
 
 ```bash
 docker compose up
